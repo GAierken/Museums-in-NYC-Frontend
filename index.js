@@ -81,6 +81,35 @@ function turnJsonToHTML(museum) {
                     dislikesLi.innerText = `Dislikes: ${museum.dislikes.length}`
                     museumDiv.append(dislikesLi)
                 
+                let likeBtn = document.createElement("button")
+                    likeBtn.id = "like-button"
+                    likeBtn.innerText = "Like"
+                    likesLi.append(likeBtn)
+
+                let dislikeBtn = document.createElement("button")
+                    dislikeBtn.id = "dislike-button"
+                    dislikeBtn.innerText = "Dislike"
+                    dislikesLi.append(dislikeBtn)
+                
+                let newReview = document.createElement("form")
+                    newReview.id = "review-form"
+                    newReview.innerText = "New review:"
+                    reviewTextarea = document.createElement("textarea")
+                    reviewTextarea.id = "review-content"
+                    reviewTextarea.type = "text"
+                    submitInput = document.createElement("input")
+                    submitInput.id = "review-submit"
+                    submitInput.innerText = "Submit"
+                    submitInput.type = "submit"
+                    newReview.append(reviewTextarea)
+                    newReview.append(submitInput)
+                    museumDiv.append(newReview)
+
+                    newReview.addEventListener("submit", (evt) => {
+                        evt.preventDefault()
+                        let newContent = reviewTextarea.value
+                        
+                    })
                 
             })
         
