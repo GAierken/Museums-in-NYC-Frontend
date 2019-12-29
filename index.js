@@ -1,6 +1,6 @@
 let museumsUl = document.getElementById("museum")
 let museumDiv = document.getElementById("museum-detail")
-console.log(museumDiv)
+
 fetch("http://localhost:3000/museums")
 .then(r => r.json())
 .then(museumArr => {
@@ -10,18 +10,21 @@ fetch("http://localhost:3000/museums")
 })
 
 function turnJsonToHTML(museum) {
+    
     let museumLi = document.createElement("li")
     museumLi.className = "museum-name"
     museumLi.innerText = museum.name 
     museumsUl.append(museumLi)
 
     museumLi.addEventListener("mouseenter", (evt) => {
+       
         let infoDiv = document.createElement("div")
             infoDiv.className = "museum-info"
-            infoDiv.innerText = "Museum Info"
+            infoDiv.innerText = "Info"
             museumLi.append(infoDiv)
 
             infoDiv.addEventListener("click", (evt) => {
+                
                     museumDiv.innerHTML = ""
                 let museumCard = document.createElement("div")
                     museumCard.className = "museum-card"
@@ -45,9 +48,32 @@ function turnJsonToHTML(museum) {
                 let museumWebpage = document.createElement("p")
                     museumWebpage.innerText =`Official Webpage: ${museum.homepage}`
                     museumCard.append(museumWebpage)
-                    console.log(museumCard)
                     museumDiv.append(museumCard)
+                    
+                    
+                    
+            })
+        let reviewDiv = document.createElement("div")
+            reviewDiv.className = "museum-review"
+            reviewDiv.innerText = "Reviews"
+            museumLi.append(reviewDiv)
+
+            reviewDiv.addEventListener("click", (evt) => {
+                museumDiv.innerHTML = ""
+                if (museum.reviews.length > 0) {
+                    museum.reviews.forEach((review) => {
+                        let reviewLi = document.createElement("li")
+                            reviewLi.className = "museum-review"
+                            reviewLi.innerText = review.content
+                            museumDiv.append(reviewLi)
+                    })
+                } else {
+                   museumDiv.innerText = "No review yet!"
+                }
+                
             })
         
     })
+
+    
 }
