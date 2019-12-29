@@ -70,6 +70,17 @@ function turnJsonToHTML(museum) {
                 } else {
                    museumDiv.innerText = "No review yet!"
                 }
+
+                
+                let likesLi = document.createElement("li")
+                    likesLi.className = "museum-likes"
+                    likesLi.innerText = `Likes: ${museum.likes.length}`
+                    museumDiv.append(likesLi)
+                let dislikesLi = document.createElement("li")
+                    dislikesLi.className = "museum-dislikes"
+                    dislikesLi.innerText = `Dislikes: ${museum.dislikes.length}`
+                    museumDiv.append(dislikesLi)
+                
                 
             })
         
