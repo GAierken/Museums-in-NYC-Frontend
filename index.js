@@ -31,15 +31,19 @@ function turnJsonToHTML(museum) {
                 let museumImg = document.createElement("img")
                     museumImg.src = museum.image_url
                     museumImg.alt = museum.name
+                    museumImg.width = "400"
+                    museumImg.height = "600"
+                    museumImg.className = "center"
                     museumCard.append(museumImg)
                 let museumDesP = document.createElement("p") 
                     museumDesP.innerText = museum.description  
                     museumCard.append(museumDesP)
                 let museumHour = document.createElement("h5")
-                    museumHour.innerText = museum.hours
+                    museumHour.innerText =`Hours: 
+                    ${museum.hours}`
                     museumCard.append(museumHour)
                 let museumWebpage = document.createElement("p")
-                    museumWebpage.innerText = museum.homepage
+                    museumWebpage.innerText =`Official Webpage: ${museum.homepage}`
                     museumCard.append(museumWebpage)
                     console.log(museumCard)
                     museumDiv.append(museumCard)
