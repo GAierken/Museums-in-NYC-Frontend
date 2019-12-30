@@ -20,7 +20,7 @@ function turnJsonToHTML(museum) {
        
         let infoDiv = document.createElement("div")
             infoDiv.className = "museum-info"
-            infoDiv.innerText = "Info"
+            infoDiv.innerText = "Description"
             museumLi.append(infoDiv)
 
             infoDiv.addEventListener("click", (evt) => {
@@ -53,10 +53,18 @@ function turnJsonToHTML(museum) {
                     
                     
             })
+        
+        let planDiv = document.createElement("div")
+            planDiv.className = "museum-plan"
+            planDiv.innerText = "Plan Your Visit"
+            museumLi.append(planDiv)
+        
         let reviewDiv = document.createElement("div")
             reviewDiv.className = "museum-review"
             reviewDiv.innerText = "Reviews"
             museumLi.append(reviewDiv)
+
+            
 
             reviewDiv.addEventListener("click", (evt) => {
                 museumDiv.innerHTML = ""
@@ -126,6 +134,14 @@ function turnJsonToHTML(museum) {
                 
             })
         
+    })
+
+    museumLi.addEventListener("mouseleave", () => {
+        museumLi.lastChild.remove()
+        museumLi.lastChild.remove()
+        museumLi.lastChild.remove()
+
+
     })
 
     
