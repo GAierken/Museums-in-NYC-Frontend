@@ -27,6 +27,63 @@ searchInput.addEventListener("input", (evt) => {
 
 /////// search
 
+////user login
+// let userForm = document.createElement("form")
+//     userForm.id = "user-signin"
+
+// let nameLabel = document.createElement("label")
+//     nameLabel.innerText = "Name"
+//     nameLabel.for = "name"
+// let nameInput = document.createElement("input")
+//     nameInput.type = "text"
+//     nameInput.name = "name"
+//     nameLabel.append(nameInput)
+//     userForm.append(nameLabel)
+    
+
+// let mailLabel = document.createElement("label")
+//     mailLabel.innerText = "Email"
+//     mailLabel.for = "email"
+// let mailInput = document.createElement("input")
+//     mailInput.type = "text"
+//     mailInput.name = "email"
+//     mailLabel.append(mailInput)
+//     userForm.append(mailLabel)
+
+// let submitInput = document.createElement("input")
+//     submitInput.type = "submit"
+//     userForm.append(submitInput)
+//     document.body.prepend(userForm)
+
+//     submitInput.addEventListener("click", (evt) => {
+//         evt.preventDefault()
+//         userForm.remove()
+//         let welcomeSign = document.createElement("h4")
+//             welcomeSign.innerText = `Welcome ${nameInput.value}`
+//             document.body.prepend(welcomeSign)
+//         let newName = nameInput.value
+//         let newMail = mailInput.value
+//         fetch("http://localhost:3000/users", {
+//             method: "POST",
+//             headers: {
+//                 "content-type": "application/json",
+//                 "accept": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 name: newName,
+//                 email: newMail
+//             })
+//         })
+        
+        
+//     })
+    
+    
+    
+////user login
+
+
+
 ////// 'GET'
 fetch("http://localhost:3000/museums")
 .then(r => r.json())
