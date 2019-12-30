@@ -143,6 +143,42 @@ function turnJsonToHTML(museum) {
 
             reviewDiv.addEventListener("click", (evt) => {
                 museumDiv.innerHTML = ""
+                let userSignForm = document.createElement('form')
+                let userLabel = document.createElement("label")
+                let userInput = document.createElement("input")
+                    userInput.type = "text"
+                    userInput.name = "name"
+                    userLabel.append(userInput)
+                let submitInput = document.createElement("input")
+                    submitInput.type = "submit"
+                    userSignForm.append(userLabel)
+                    userSignForm.append(submitInput)
+                userSignForm.addEventListener("submit", (evt) => {
+                    evt.preventDefault()
+                    newName = userInput.value
+                    fetch("http://localhost:3000/users", {
+                        method: "POST",
+                        headers: {
+                            "content-type": "application/json",
+                            "accept": "application/json"
+                        },
+                        body: JSON.stringify({
+                            name: newName,
+                            reviews: [],
+                            likes: [],
+                            dislikes: []
+                        })
+                    })
+                    .then(r => r.json())
+                    .then(user => {
+                        userSignForm.remove()
+                        let welcomeUser = document.createElement("h3")
+                            welcomeUser.innerText = `Welcome ${user.name}! Please give us feedback!`
+                        museumDiv.prepend(welcomeUser)
+                    })
+                    
+                })
+                    
                 if (museum.reviews.length > 0) {
                     museum.reviews.forEach((review) => {
                         let reviewLi = document.createElement("li")
@@ -170,9 +206,15 @@ function turnJsonToHTML(museum) {
                     likesLi.append(likeBtn)
 
                     likeBtn.addEventListener("click", (evt) => {
+                        console.log(userSignForm.querySelector("input").value)
+                        if(userSignForm.querySelector("input").value){
                         museum.likes.length ++
                         likesLi.innerText =`Likes: ${museum.likes.length}`
-                        likesLi.append(likeBtn)
+                        likesLi.append(likeBtn)}
+                        else{
+                            alert("Please sign-in!")
+                            museumDiv.append(userSignForm)
+                        }
                     })
 
                 let dislikeBtn = document.createElement("button")
@@ -181,6 +223,7 @@ function turnJsonToHTML(museum) {
                     dislikesLi.append(dislikeBtn)
 
                     dislikeBtn.addEventListener("click", (evt) => {
+                        console.log(userSignForm)
                         museum.dislikes.length ++
                         dislikesLi.innerText =`Dislikes: ${museum.dislikes.length}`
                         dislikesLi.append(dislikeBtn)
@@ -202,6 +245,7 @@ function turnJsonToHTML(museum) {
 
                     newReview.addEventListener("submit", (evt) => {
                         evt.preventDefault()
+                        console.log(userSignForm)
                         console.log(reviewTextarea.value)
                         let newContent = reviewTextarea.value
                         
