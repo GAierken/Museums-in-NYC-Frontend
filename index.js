@@ -1,6 +1,33 @@
 let museumsUl = document.getElementById("museum")
 let museumDiv = document.getElementById("museum-detail")
 
+///// search
+let searchInput = document.createElement("input")
+searchInput.type = "text"
+searchInput.placeholder = "Search for Museum"
+document.body.prepend(searchInput)
+
+searchInput.addEventListener("input", (evt) => {
+   
+  let thingTyped = evt.target.value
+      
+
+  let allMuseums = document.querySelectorAll("li.museum-name")
+     
+  allMuseums.forEach((museumLi) => {
+    console.log(museumLi.innerText.toLowerCase())
+    if (museumLi.innerText.toLowerCase().includes(thingTyped.toLowerCase())) {
+      museumLi.style.display = ""
+    } else {
+      museumLi.style.display = "none"
+    }
+  })
+
+})
+
+/////// search
+
+////// 'GET'
 fetch("http://localhost:3000/museums")
 .then(r => r.json())
 .then(museumArr => {
@@ -41,10 +68,6 @@ function turnJsonToHTML(museum) {
                 let museumDesP = document.createElement("p") 
                     museumDesP.innerText = museum.description  
                     museumCard.append(museumDesP)
-                let museumHour = document.createElement("h5")
-                    museumHour.innerText =`Hours: 
-                    ${museum.hours}`
-                    museumCard.append(museumHour)
                 let museumWebpage = document.createElement("p")
                     museumWebpage.innerText =`Official Webpage: ${museum.homepage}`
                     museumCard.append(museumWebpage)
@@ -54,17 +77,12 @@ function turnJsonToHTML(museum) {
                     
             })
         
-        let planDiv = document.createElement("div")
-            planDiv.className = "museum-plan"
-            planDiv.innerText = "Plan Your Visit"
-            museumLi.append(planDiv)
+        
         
         let reviewDiv = document.createElement("div")
             reviewDiv.className = "museum-review"
             reviewDiv.innerText = "Reviews"
             museumLi.append(reviewDiv)
-
-            
 
             reviewDiv.addEventListener("click", (evt) => {
                 museumDiv.innerHTML = ""
@@ -131,6 +149,25 @@ function turnJsonToHTML(museum) {
                         let newContent = reviewTextarea.value
                         
                     })
+                
+            })
+
+        let planDiv = document.createElement("div")
+            planDiv.className = "museum-plan"
+            planDiv.innerText = "Plan Your Visit"
+            museumLi.append(planDiv)
+
+            planDiv.addEventListener("click", (evt) => {
+                museumDiv.innerHTML = ""
+            let planCard = document.createElement("div")
+                planCard.className = "plan-card"
+            let hoursH4 = document.createElement("h4")
+                hoursH4.innerText = museum.hours
+                planCard.append(hoursH4)
+            let addressH4 = document.createElement("h4")
+                addressH4.innerText = museum.address
+                planCard.append(addressH4)
+                museumDiv.append(planCard)
                 
             })
         
