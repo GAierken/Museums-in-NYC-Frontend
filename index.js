@@ -1,3 +1,4 @@
+/////////html getelement
 let museumsUl = document.getElementById("museum")
 let museumDiv = document.getElementById("museum-detail")
 
@@ -92,24 +93,27 @@ fetch("http://localhost:3000/museums")
        turnJsonToHTML(museum)
     });
 })
+/////'get'
 
 function turnJsonToHTML(museum) {
-    
+    /////create li for museum
     let museumLi = document.createElement("li")
     museumLi.className = "museum-name"
     museumLi.innerText = museum.name 
     museumsUl.append(museumLi)
-
+ //////////museum li
+ //////musuemli mouseenter
     museumLi.addEventListener("mouseenter", (evt) => {
-       
+       ///////description div
         let infoDiv = document.createElement("div")
             infoDiv.className = "museum-info"
             infoDiv.innerText = "Description"
             museumLi.append(infoDiv)
-
+        //////// infodiv click
             infoDiv.addEventListener("click", (evt) => {
                 
                     museumDiv.innerHTML = ""
+                    /////mueseum card
                 let museumCard = document.createElement("div")
                     museumCard.className = "museum-card"
                 let museumH3 = document.createElement("h3")
@@ -135,14 +139,15 @@ function turnJsonToHTML(museum) {
             })
         
         
-        
+        ///////review div
         let reviewDiv = document.createElement("div")
             reviewDiv.className = "museum-review"
             reviewDiv.innerText = "Reviews"
             museumLi.append(reviewDiv)
-
+            /////review div click
             reviewDiv.addEventListener("click", (evt) => {
                 museumDiv.innerHTML = ""
+                /////user form
                 let userSignForm = document.createElement('form')
                 let userLabel = document.createElement("label")
                 let userInput = document.createElement("input")
@@ -153,6 +158,7 @@ function turnJsonToHTML(museum) {
                     submitInput.type = "submit"
                     userSignForm.append(userLabel)
                     userSignForm.append(submitInput)
+                    //////form submit and fetch post
                 userSignForm.addEventListener("submit", (evt) => {
                     evt.preventDefault()
                     newName = userInput.value
@@ -178,7 +184,7 @@ function turnJsonToHTML(museum) {
                     })
                     
                 })
-                    
+                    ////// museum reviews show
                 if (museum.reviews.length > 0) {
                     museum.reviews.forEach((review) => {
                         let reviewLi = document.createElement("li")
@@ -190,7 +196,7 @@ function turnJsonToHTML(museum) {
                    museumDiv.innerText = "No review yet!"
                 }
 
-                
+                ///////likes li 
                 let likesLi = document.createElement("li")
                     likesLi.className = "museum-likes"
                     likesLi.innerText = `Likes: ${museum.likes.length}`
@@ -199,12 +205,12 @@ function turnJsonToHTML(museum) {
                     dislikesLi.className = "museum-dislikes"
                     dislikesLi.innerText = `Dislikes: ${museum.dislikes.length}`
                     museumDiv.append(dislikesLi)
-                
+                ////////likes button
                 let likeBtn = document.createElement("button")
                     likeBtn.id = "like-button"
                     likeBtn.innerText = "Like"
                     likesLi.append(likeBtn)
-
+                //////likes button click event
                     likeBtn.addEventListener("click", (evt) => {
                         
                         if(userSignForm.querySelector("input").value){
@@ -219,12 +225,12 @@ function turnJsonToHTML(museum) {
                             museumDiv.append(userSignForm)
                         }
                     })
-
+                    ///////dilikes button
                 let dislikeBtn = document.createElement("button")
                     dislikeBtn.id = "dislike-button"
                     dislikeBtn.innerText = `Dislikes`
                     dislikesLi.append(dislikeBtn)
-
+                    ////dislike button click event
                     dislikeBtn.addEventListener("click", (evt) => {
                         if(userSignForm.querySelector("input").value){
                         museum.dislikes.length ++
@@ -235,7 +241,7 @@ function turnJsonToHTML(museum) {
                             museumDiv.append(userSignForm)
                         }
                     })
-                
+                   /////new review form
                 let newReview = document.createElement("form")
                     newReview.id = "review-form"
                     newReview.innerText = "New review:"
@@ -249,7 +255,7 @@ function turnJsonToHTML(museum) {
                     newReview.append(reviewTextarea)
                     newReview.append(submitInput)
                     museumDiv.append(newReview)
-
+                    //////newreview submit
                     newReview.addEventListener("submit", (evt) => {
                         evt.preventDefault()
                         if(userSignForm.querySelector("input").value){
@@ -262,12 +268,12 @@ function turnJsonToHTML(museum) {
                     })
                 
             })
-
+            ///plan your visit
         let planDiv = document.createElement("div")
             planDiv.className = "museum-plan"
             planDiv.innerText = "Plan Your Visit"
             museumLi.append(planDiv)
-
+            /////plan div click
             planDiv.addEventListener("click", (evt) => {
                 museumDiv.innerHTML = ""
             let planCard = document.createElement("div")
@@ -283,7 +289,8 @@ function turnJsonToHTML(museum) {
             })
         
     })
-
+/////////mouseenter end
+/////mouseleave museumli
     museumLi.addEventListener("mouseleave", () => {
         museumLi.lastChild.remove()
         museumLi.lastChild.remove()
@@ -291,6 +298,7 @@ function turnJsonToHTML(museum) {
 
 
     })
+///////mouse leave end
 
     
 }
