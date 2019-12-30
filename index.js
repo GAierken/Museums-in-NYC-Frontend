@@ -206,11 +206,14 @@ function turnJsonToHTML(museum) {
                     likesLi.append(likeBtn)
 
                     likeBtn.addEventListener("click", (evt) => {
-                        console.log(userSignForm.querySelector("input").value)
+                        
                         if(userSignForm.querySelector("input").value){
                         museum.likes.length ++
                         likesLi.innerText =`Likes: ${museum.likes.length}`
-                        likesLi.append(likeBtn)}
+                        likesLi.append(likeBtn)
+                        
+                    
+                    }
                         else{
                             alert("Please sign-in!")
                             museumDiv.append(userSignForm)
@@ -223,10 +226,14 @@ function turnJsonToHTML(museum) {
                     dislikesLi.append(dislikeBtn)
 
                     dislikeBtn.addEventListener("click", (evt) => {
-                        console.log(userSignForm)
+                        if(userSignForm.querySelector("input").value){
                         museum.dislikes.length ++
                         dislikesLi.innerText =`Dislikes: ${museum.dislikes.length}`
-                        dislikesLi.append(dislikeBtn)
+                        dislikesLi.append(dislikeBtn)}
+                        else{
+                            alert("Please sign-in!")
+                            museumDiv.append(userSignForm)
+                        }
                     })
                 
                 let newReview = document.createElement("form")
@@ -245,9 +252,12 @@ function turnJsonToHTML(museum) {
 
                     newReview.addEventListener("submit", (evt) => {
                         evt.preventDefault()
-                        console.log(userSignForm)
-                        console.log(reviewTextarea.value)
-                        let newContent = reviewTextarea.value
+                        if(userSignForm.querySelector("input").value){
+                        let newContent = reviewTextarea.value}
+                        else{
+                            alert("Please sign-in!")
+                            museumDiv.append(userSignForm)
+                        }
                         
                     })
                 
