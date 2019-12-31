@@ -24,6 +24,7 @@ class ReviewJS {
       this.revForm.append(this.reInput)
       this.revForm.append(this.submitInput)
       
+      
      
      this.liDel = document.createElement("button")
       this.liDel.className = 'delete-btn'
@@ -37,10 +38,21 @@ class ReviewJS {
       this.liDel.addEventListener("click", this.deleteHandle)  
     }
     editHandle = () => {
+
        museumDetail.append(this.revForm)
+       let area = this.revForm.querySelector("textarea")
+           area.placeholder = this.content
 
     }
     deleteHandle =() => {
-        console.log("hello")
+        
+        Adaptor.deleteReview(this.id)
+        .then(deletedRev => {
+            this.li.remove()
+            let foundMuseum = museumJS.all.find(museum => museum.id === deletedRev.museum_id)
+                
+            let modifiedArray = foundMuseum.reviews.filter(rev => rev.id !== deletedRev.id)
+            foundMuseum.reviews = modifiedArray
+        })
     }
 }
