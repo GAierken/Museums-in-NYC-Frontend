@@ -37,8 +37,7 @@ class museumJS {
         this.nameLiTag.addEventListener('mouseenter', this.handleMouseEnter)
         this.nameLiTag.addEventListener('mouseleave', this.handleMouseLeave)
 
-        this.detailTag = document.createElement("div")
-         this.detailTag.className = "detail"
+        
          
         this.descriptionTag.addEventListener("click", this.desClickHandel)
         this.reviewsTag.addEventListener("click", this.revClickHandel)
@@ -63,6 +62,8 @@ class museumJS {
 
     desClickHandel = () => {
         museumDetail.innerHTML = " "
+        this.detailTag = document.createElement("div")
+         this.detailTag.className = "detail"
         this.nameH4 = document.createElement("h4")
         this.nameH4.innerText = `${this.name}`
         this.detailTag.append(this.nameH4)
