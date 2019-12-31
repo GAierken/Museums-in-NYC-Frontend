@@ -95,6 +95,9 @@ class museumJS {
             this.noRevLi.className = "no-review"
             this.noRevLi.innerText = "No review yet!"
             museumDetail.append(this.noRevLi)
+            
+            
+      
         }
         
     }
