@@ -77,9 +77,10 @@ class museumJS {
         this.desPTag.className = 'museum-des'
         this.desPTag.innerText = `${this.description}`
         this.detailTag.append(this.desPTag)
-        this.homepageTag = document.createElement('p')
+        this.homepageTag = document.createElement('a')
         this.homepageTag.className = 'museum-homepage'
-        this.homepageTag.innerText = `${this.homepage}`
+        this.homepageTag.innerText = "Official Webpage"
+        this.homepageTag.href = `${this.homepage}`
         this.detailTag.append(this.homepageTag)
         museumDetail.append(this.detailTag)
 
