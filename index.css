@@ -33,3 +33,27 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+.review {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
+    text-align: justify;
+}
+
+.museum-hours {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
+    text-align: justify;
+}
+
+.museum-address {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
+    text-align: justify;
+}
+
+.museum-homepage {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
+    text-align: justify;
+}
