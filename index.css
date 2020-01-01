@@ -1,0 +1,35 @@
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: xx-large;
+    color: #003a50;
+    text-align: center;
+}
+
+.museum {
+    font-family: 'Ubuntu', sans-serif;
+    color: #003a50
+    
+
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
+    text-align: center;
+}
+
+body {
+    background-color: #d8a7b1;
+}
+
+.museum-des {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
+    text-align: justify;
+}
+
+img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
