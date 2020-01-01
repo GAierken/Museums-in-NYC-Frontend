@@ -90,13 +90,14 @@ class museumJS {
         if (this.reviews.length > 0) {
             this.reviews.forEach(review => {
                 new ReviewJS(review)
+               
             });
         } else {
             this.noRevLi = document.createElement("li")
             this.noRevLi.className = "no-review"
             this.noRevLi.innerText = "No review yet!"
             museumDetail.append(this.noRevLi)
-            
+
             
             
       
