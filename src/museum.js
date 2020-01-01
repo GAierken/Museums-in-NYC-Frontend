@@ -98,6 +98,7 @@ class museumJS {
             museumDetail.append(this.noRevLi)
             
             
+            
       
         }
         
