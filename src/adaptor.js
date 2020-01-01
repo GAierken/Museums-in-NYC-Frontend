@@ -33,5 +33,5 @@ function deleteReview(id) {
 const Adaptor = {
     allMuseums: getMuseums,
     deleteReview: deleteReview,
-    editReview: editReview
+    // editReview: editReview
 }
