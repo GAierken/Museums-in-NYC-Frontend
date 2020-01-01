@@ -12,17 +12,7 @@ class ReviewJS {
       this.liEdit.innerText = "Edit"
       this.li.append(this.liEdit)
 
-    this.revForm = document.createElement("form")
-      this.revForm.className = "review-form"
-      this.revLabel = document.createElement("label")
-      this.revLabel.innerText = "Please write your review:"
-      this.reInput = document.createElement("textarea")
-      this.reInput.name = "new-review"
-      this.submitInput = document.createElement("input")
-      this.submitInput.type = "submit"
-      this.revForm.append(this.revLabel)
-      this.revForm.append(this.reInput)
-      this.revForm.append(this.submitInput)
+      
       
       
      
@@ -37,6 +27,23 @@ class ReviewJS {
       this.liEdit.addEventListener("click", this.editHandle)
       this.liDel.addEventListener("click", this.deleteHandle)  
     }
+
+    // revForm = () => {
+    //     this.revForm = document.createElement("form")
+    //   this.revForm.className = "review-form"
+    //   this.revLabel = document.createElement("label")
+    //   this.revLabel.innerText = "Please write your review:"
+    //   this.reInput = document.createElement("textarea")
+    //   this.reInput.name = "new-review"
+    //   this.submitInput = document.createElement("input")
+    //   this.submitInput.type = "submit"
+    //   this.revForm.append(this.revLabel)
+    //   this.revForm.append(this.reInput)
+    //   this.revForm.append(this.submitInput)
+    //   debugger
+    // }
+
+      
     editHandle = () => {
 
        museumDetail.append(this.revForm)
@@ -48,11 +55,12 @@ class ReviewJS {
         
         Adaptor.deleteReview(this.id)
         .then(deletedRev => {
+            
             this.li.remove()
             let foundMuseum = museumJS.all.find(museum => museum.id === deletedRev.museum_id)
-                
+            
             let modifiedArray = foundMuseum.reviews.filter(rev => rev.id !== deletedRev.id)
-            foundMuseum.reviews = modifiedArray
+                foundMuseum.reviews = modifiedArray
         })
     }
 }
