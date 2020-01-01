@@ -2,6 +2,8 @@ class ReviewJS {
     constructor(revObj) {
         this.id = revObj.id
         this.content = revObj.content
+        this.user_id = revObj.user_id
+        this.museum_id = revObj.museum_id
 
     this.li = document.createElement("li")
      this.li.className = 'review'
@@ -22,35 +24,44 @@ class ReviewJS {
       this.li.append(this.liDel)
      museumDetail.append(this.li)
 
-     
+    
 
       this.liEdit.addEventListener("click", this.editHandle)
       this.liDel.addEventListener("click", this.deleteHandle)  
     }
 
-    // revForm = () => {
-    //     this.revForm = document.createElement("form")
-    //   this.revForm.className = "review-form"
-    //   this.revLabel = document.createElement("label")
-    //   this.revLabel.innerText = "Please write your review:"
-    //   this.reInput = document.createElement("textarea")
-    //   this.reInput.name = "new-review"
-    //   this.submitInput = document.createElement("input")
-    //   this.submitInput.type = "submit"
-    //   this.revForm.append(this.revLabel)
-    //   this.revForm.append(this.reInput)
-    //   this.revForm.append(this.submitInput)
-    //   debugger
-    // }
-
+    
       
     editHandle = () => {
-
-       museumDetail.append(this.revForm)
-       let area = this.revForm.querySelector("textarea")
-           area.placeholder = this.content
+       
+      let revForm = document.createElement("form")
+          revForm.className = 'rev-form'
+        let revLabel = document.createElement("label")
+            revLabel.className = "rev-label"
+            revLabel.innerText = "Please edit your feedback:"
+        let revTextarea = document.createElement('textarea')
+            revTextarea.className = 'rev-textarea'
+            revTextarea.placeholder = `${this.content}`
+        let revSubmit = document.createElement("input")
+            revSubmit.type = "submit"
+            revSubmit.className = 'rev-submit'
+            revSubmit.innerText = 'Submit'
+            revForm.append(revLabel, revTextarea, revSubmit)
+           this.li.append(revForm)
+        revForm.addEventListener("submit", this.handleSubmit)
 
     }
+    handleSubmit = (evt) => {
+        evt.preventDefault()
+        this.content = evt.target.querySelector("textarea").value
+        
+        // Adaptor.editReview(this.id)
+        // .then(editRev => {
+        //     console.log(editRev)
+        // })
+    }
+    
+    
     deleteHandle =() => {
         
         Adaptor.deleteReview(this.id)
