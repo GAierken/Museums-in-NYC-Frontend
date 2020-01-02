@@ -87,7 +87,9 @@ class museumJS {
     }
     revClickHandel = () => {
         museumDetail.innerHTML = " "
-
+        this.nameH4 = document.createElement("h4")
+        this.nameH4.innerText = `${this.name}`
+        museumDetail.append(this.nameH4)
         if (this.reviews.length > 0) {
             this.reviews.forEach(review => {
                 new ReviewJS(review)
@@ -103,21 +105,53 @@ class museumJS {
             
       
         }
-        
-       let createRevForm = document.createElement('form')
-           createRevForm.className = "create-review"
-           createRevForm.innerText = 'Please give us your feedback:'
-       let createRevText = document.createElement('textarea')
-           createRevText.name = 'review'
-           createRevText.innerText = 'Your review here...'
-       let createRevInput = document.createElement('input')
-           createRevInput.type = 'submit'
-           createRevForm.append(createRevText, createRevInput)
-           museumDetail.append(createRevForm)
+            this.signInForm = document.createElement('form')
+            this.signInForm.className = 'create user'
+            this.signInForm.id = 'name'
+            this.signInForm.innerText = 'Please sign-in to give us feedback!'
+            
+            
+
+            this.signInInput = document.createElement('input')
+            this.signInInput.type = 'text'
+            this.signInInput.name = 'name'
+            
+            
+            this.signInForm.append(this.signInInput)
+            
+            this.userSubmit = document.createElement('input')
+            this.userSubmit.type = 'submit'
+            this.userSubmit.innerText = 'Sign Up'
+            this.signInForm.append(this.userSubmit)
+            
+            museumDetail.append(this.signInForm)
+
+           this.signInForm.addEventListener('submit', (evt) => {
+               evt.preventDefault()
+               
+               Adaptor.createUser(evt.target['name'].value)
+               
+               
+           })
+
+
+          
+           this.createRevForm = document.createElement('form')
+            this.createRevForm.className = "create-review"
+            this.createRevForm.innerText = 'Please give us your feedback:'
+           this.createRevText = document.createElement('textarea')
+            this.createRevText.name = 'review'
+            this.createRevText.innerText = 'Your review here...'
+           this.createRevInput = document.createElement('input')
+            this.createRevInput.type = 'submit'
+            this.createRevForm.append(this.createRevText, this.createRevInput)
+           museumDetail.append(this.createRevForm)
            
-           
+           this.createRevForm.addEventListener('submit', this.createSubmit)
+
 
     }
+
     planClickHandel = () => {
         museumDetail.innerHTML = " "
         this.nameH4 = document.createElement("h4")
@@ -132,7 +166,21 @@ class museumJS {
         museumDetail.append(this.hourTag)
         museumDetail.append(this.addressTag)
     }
+   
+    // 
 
+    createSubmit = (evt) => {
+        evt.preventDefault()
+        
+        let newContent = evt.target.querySelector("textarea").value
+        let museumId = this.id
+        let userId = 1
+        Adaptor.createReview(newContent, userId, museumId)
+        .then(newReview => {
+            console.log(newReview)
+        })
+    }
 
+   
 
 }

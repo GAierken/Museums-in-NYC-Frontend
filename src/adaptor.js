@@ -33,7 +33,7 @@ function editReview({id, content, user_id, museum_id}) {
     
 }
 
-function createReview(){
+function createReview(content, user_id, museum_id){
     return fetch(API + `/reviews`, {
         method: 'POST',
         headers: {
@@ -41,18 +41,41 @@ function createReview(){
             'accept': 'application/json'
         },
         body: JSON.stringify({
-            id: this.id,
-            content: this.content,
-            user_id: this.user_id,
-            museum_id: this.museum_id
+            
+            content: content,
+            user_id: user_id,
+            museum_id: museum_id
 
         }) 
     })
 }
 
+function createUser(name) {
+    // debugger 
+    let userRevs = []
+    let userLikes = []
+    let userDislikes = []
+
+    fetch(API + '/users', {
+        method: 'POST',
+        headers: {
+            'content-type': 'application/json',
+            'accept': "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            reviews: userRevs,
+            likes: userLikes,
+            dislikes: userDislikes
+        })
+    })
+    .then(r => console.log(r.json()))
+   
+}
 const Adaptor = {
     allMuseums: getMuseums,
     deleteReview: deleteReview,
     editReview: editReview,
-    createReview: createReview
+    createReview: createReview,
+    createUser: createUser
 }
