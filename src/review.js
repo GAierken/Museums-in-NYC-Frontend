@@ -1,10 +1,15 @@
 class ReviewJS {
     constructor(revObj) {
+        
         this.id = revObj.id
         this.content = revObj.content
         this.user_id = revObj.user_id
         this.museum_id = revObj.museum_id
+       
         
+       
+        
+    
     this.li = document.createElement("li")
      this.li.className = 'review'
      this.li.innerText = this.content
@@ -23,20 +28,7 @@ class ReviewJS {
       this.liDel.innerText = 'delete'
       this.li.append(this.liDel)
 
-    //    this.revForm = document.createElement("form")
-    //       this.revForm.className = 'rev-form'
-    //     this.revLabel = document.createElement("label")
-    //         this.revLabel.className = "rev-label"
-    //         this.revLabel.innerText = "Please give us your feedback:"
-    //      this.revTextarea = document.createElement('textarea')
-    //         this.revTextarea.className = 'rev-textarea'
-            
-    //      this.revSubmit = document.createElement("input")
-    //         this.revSubmit.type = "submit"
-    //         this.revSubmit.className = 'rev-submit'
-    //         this.revSubmit.innerText = 'Submit'
-    //         this.revForm.append(this.revLabel, this.revTextarea, this.revSubmit)
-            
+   
      museumDetail.append(this.li)
     //  museumDetail.append(this.revForm)
 
@@ -72,11 +64,11 @@ class ReviewJS {
     handleSubmit = (evt) => {
         evt.preventDefault()
         this.content = evt.target.querySelector("textarea").value
-        console.log(this.content)
         
         Adaptor.editReview(this)
         .then(editRev => {
-            console.log(editRev.content)
+           this.li.innerText = this.content
+           alert('Your review is updated!')
             
         })
     }

@@ -1,7 +1,9 @@
 ///// search
 let searchInput = document.createElement("input")
 searchInput.type = "text"
+searchInput.id = 'search-bar'
 searchInput.placeholder = "Search for Museum"
+
 document.body.prepend(searchInput)
 
 searchInput.addEventListener("input", (evt) => {

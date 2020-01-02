@@ -25,7 +25,7 @@ body {
 .museum-des {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
-    text-align: left;
+    text-align: justify;
     font-size: small;
 }
 
@@ -63,4 +63,9 @@ img {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
     text-align: justify;
+}
+
+#search-bar {
+    
+    float: right;
 }
