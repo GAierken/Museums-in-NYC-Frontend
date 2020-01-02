@@ -15,7 +15,7 @@ h1 {
 h4 {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
-    text-align: center;
+    text-align: justify;
 }
 
 body {
@@ -25,13 +25,20 @@ body {
 .museum-des {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
+    text-align: left;
+    font-size: small;
+}
+
+.no-review {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
     text-align: justify;
+
 }
 
 img {
     border-radius: 8px;
-    max-width: 100%;
-    height: auto;
+    
 }
 
 .review {
