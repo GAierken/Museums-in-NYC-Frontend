@@ -39,6 +39,7 @@ body {
 img {
     border-radius: 8px;
     
+    
 }
 
 .review {
@@ -63,9 +64,24 @@ img {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
     text-align: justify;
+    font-size: small;
 }
 
 #search-bar {
     
     float: right;
+}
+
+.create-user {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
+    text-align: justify;
+    font-size: small;
+}
+
+.create-review {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
+    text-align: justify;
+    font-size: small;
 }

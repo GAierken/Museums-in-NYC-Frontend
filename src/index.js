@@ -25,11 +25,11 @@ searchInput.addEventListener("input", (evt) => {
 
 })
 
-/////// search
+/////// get museums
 Adaptor.allMuseums()
 .then(museumsArr => {
     museumsArr.forEach(museum => {
-        // console.log(museum)
+
         new museumJS(museum)
     });
     

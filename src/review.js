@@ -30,13 +30,12 @@ class ReviewJS {
 
    
      museumDetail.append(this.li)
-    //  museumDetail.append(this.revForm)
+   
 
     
 
       this.liEdit.addEventListener("click", this.editHandle)
       this.liDel.addEventListener("click", this.deleteHandle)  
-    //   this.revForm.addEventListener('submit', this.createHandle)
       
     }
 
@@ -73,18 +72,7 @@ class ReviewJS {
         })
     }
     
-    createHandle = (evt) => {
-        // if (this.user_id) {
-            
-        // } else {
-            
-        // }
-        evt.preventDefault()
-        this.content = evt.target.querySelector("textarea").value
-        
-        Adaptor.createReview()
-        .then(console.log)
-    }
+   
     
     deleteHandle =() => {
         
