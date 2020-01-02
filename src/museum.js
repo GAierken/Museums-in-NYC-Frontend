@@ -70,8 +70,8 @@ class museumJS {
         this.imgTag = document.createElement("img")
         this.imgTag.src = `${this.image_url}`
         this.imgTag.alt = `${this.name}`
-        this.imgTag.width = '400'
-        this.imgTag.height = '400'
+        this.imgTag.width = '300'
+        this.imgTag.height = '300'
         this.detailTag.append(this.imgTag)
         this.desPTag = document.createElement("p")
         this.desPTag.className = 'museum-des'
@@ -87,6 +87,7 @@ class museumJS {
     }
     revClickHandel = () => {
         museumDetail.innerHTML = " "
+
         if (this.reviews.length > 0) {
             this.reviews.forEach(review => {
                 new ReviewJS(review)
@@ -103,15 +104,31 @@ class museumJS {
       
         }
         
+       let createRevForm = document.createElement('form')
+           createRevForm.className = "create-review"
+           createRevForm.innerText = 'Please give us your feedback:'
+       let createRevText = document.createElement('textarea')
+           createRevText.name = 'review'
+           createRevText.innerText = 'Your review here...'
+       let createRevInput = document.createElement('input')
+           createRevInput.type = 'submit'
+           createRevForm.append(createRevText, createRevInput)
+           museumDetail.append(createRevForm)
+           
+           
+
     }
     planClickHandel = () => {
         museumDetail.innerHTML = " "
+        this.nameH4 = document.createElement("h4")
+        this.nameH4.innerText = `${this.name}`
         this.hourTag = document.createElement("li")
         this.hourTag.className = "museum-hours"
         this.hourTag.innerText = `${this.hours}`
         this.addressTag = document.createElement("li")
         this.addressTag.className = "museum-address"
         this.addressTag.innerText = `${this.address}`
+        museumDetail.append(this.nameH4)
         museumDetail.append(this.hourTag)
         museumDetail.append(this.addressTag)
     }
