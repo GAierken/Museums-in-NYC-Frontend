@@ -48,15 +48,14 @@ function createReview(content, user_id, museum_id){
 
         }) 
     })
+    .then(r => r.json())
 }
 
 function createUser(name) {
-    // debugger 
-    let userRevs = []
-    let userLikes = []
-    let userDislikes = []
+       
+    
 
-    fetch(API + '/users', {
+    return fetch(API + '/users', {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
@@ -64,12 +63,11 @@ function createUser(name) {
         },
         body: JSON.stringify({
             name: name,
-            reviews: userRevs,
-            likes: userLikes,
-            dislikes: userDislikes
+            
         })
     })
-    .then(r => console.log(r.json()))
+
+    .then(r => r.json())
    
 }
 const Adaptor = {

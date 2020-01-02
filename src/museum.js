@@ -88,8 +88,19 @@ class museumJS {
     revClickHandel = () => {
         museumDetail.innerHTML = " "
         this.nameH4 = document.createElement("h4")
-        this.nameH4.innerText = `${this.name}`
+         this.nameH4.innerText = `${this.name}`
+        this.likesBtn = document.createElement("button")
+         this.likesBtn.className = 'likes-button'
+         this.likesBtn.innerText = "👍"
+         this.nameH4.append(this.likesBtn)
+        this.dislikesBtn = document.createElement("button")
+         this.dislikesBtn.className = 'dislikes-button'
+         this.dislikesBtn.innerText = "👎"
+         this.nameH4.append(this.dislikesBtn)
+
+        
         museumDetail.append(this.nameH4)
+        
         if (this.reviews.length > 0) {
             this.reviews.forEach(review => {
                 new ReviewJS(review)
@@ -106,7 +117,7 @@ class museumJS {
       
         }
             this.signInForm = document.createElement('form')
-            this.signInForm.className = 'create user'
+            this.signInForm.className = 'create-user'
             this.signInForm.id = 'name'
             this.signInForm.innerText = 'Please sign-in to give us feedback!'
             
@@ -128,26 +139,44 @@ class museumJS {
 
            this.signInForm.addEventListener('submit', (evt) => {
                evt.preventDefault()
+               let name = evt.target['name'].value
+               Adaptor.createUser(name)
+              .then(user => {
+                  
+                this.signInForm.remove()
+                  
+                  this.createRevForm = document.createElement('form')
+                  this.createRevForm.className = "create-review"
+                  this.createRevForm.innerText = `Hi! ${user.name}! Please give us your feedback:`
+                 this.createRevText = document.createElement('textarea')
+                  this.createRevText.name = 'review'
+                  this.createRevText.innerText = 'Your review here...'
+                 this.createRevInput = document.createElement('input')
+                  this.createRevInput.type = 'submit'
+                  this.createRevForm.append(this.createRevText, this.createRevInput)
+                 museumDetail.append(this.createRevForm)
+                 
+                
+                 
+                 this.createRevForm.addEventListener('submit', (evt) => {
+                     evt.preventDefault()
+                     let newContent = evt.target.querySelector('textarea').value
+                        
+                     Adaptor.createReview(newContent, user.id, this.id)
+                     .then(newRev => {
+                         this.createRevForm.remove()
+                         new ReviewJS(newRev)
+                     })
+                 })
+              })
                
-               Adaptor.createUser(evt.target['name'].value)
                
                
            })
 
 
           
-           this.createRevForm = document.createElement('form')
-            this.createRevForm.className = "create-review"
-            this.createRevForm.innerText = 'Please give us your feedback:'
-           this.createRevText = document.createElement('textarea')
-            this.createRevText.name = 'review'
-            this.createRevText.innerText = 'Your review here...'
-           this.createRevInput = document.createElement('input')
-            this.createRevInput.type = 'submit'
-            this.createRevForm.append(this.createRevText, this.createRevInput)
-           museumDetail.append(this.createRevForm)
-           
-           this.createRevForm.addEventListener('submit', this.createSubmit)
+         
 
 
     }
@@ -167,19 +196,6 @@ class museumJS {
         museumDetail.append(this.addressTag)
     }
    
-    // 
-
-    createSubmit = (evt) => {
-        evt.preventDefault()
-        
-        let newContent = evt.target.querySelector("textarea").value
-        let museumId = this.id
-        let userId = 1
-        Adaptor.createReview(newContent, userId, museumId)
-        .then(newReview => {
-            console.log(newReview)
-        })
-    }
 
    
 
