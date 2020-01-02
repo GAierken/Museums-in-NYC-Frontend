@@ -1,3 +1,4 @@
+
 ///// search
 let searchInput = document.createElement("input")
 searchInput.type = "text"
@@ -7,7 +8,7 @@ searchInput.placeholder = "Search for Museum"
 document.body.prepend(searchInput)
 
 searchInput.addEventListener("input", (evt) => {
-
+    museumDetail.innerHTML = ''
   let thingTyped = evt.target.value
 
 
