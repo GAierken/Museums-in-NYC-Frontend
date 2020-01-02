@@ -89,16 +89,9 @@ class museumJS {
         museumDetail.innerHTML = " "
         this.nameH4 = document.createElement("h4")
          this.nameH4.innerText = `${this.name}`
-        this.likesBtn = document.createElement("button")
-         this.likesBtn.className = 'likes-button'
-         this.likesBtn.innerText = "👍"
-         this.nameH4.append(this.likesBtn)
-        this.dislikesBtn = document.createElement("button")
-         this.dislikesBtn.className = 'dislikes-button'
-         this.dislikesBtn.innerText = "👎"
-         this.nameH4.append(this.dislikesBtn)
-
         
+         
+         
         museumDetail.append(this.nameH4)
         
         if (this.reviews.length > 0) {
@@ -144,7 +137,24 @@ class museumJS {
               .then(user => {
                   
                 this.signInForm.remove()
-                  
+                this.likesBtn = document.createElement("button")
+                 this.likesBtn.className = 'likes-button'
+                 this.likesBtn.innerText = `👍${this.likes.length}`
+                 this.nameH4.append(this.likesBtn)
+         
+                this.dislikesBtn = document.createElement("button")
+                 this.dislikesBtn.className = 'dislikes-button'
+                 this.dislikesBtn.innerText = `👎${this.dislikes.length}`
+                 this.nameH4.append(this.dislikesBtn)
+                this.likesBtn.addEventListener("click", (evt) => {
+                    this.likes.length ++
+                    evt.target.innerText = `👍${this.likes.length}`
+                 })
+                 this.dislikesBtn.addEventListener("click", (evt) => {
+                    this.dislikes.length ++
+                    evt.target.innerText = `👍${this.dislikes.length}`
+                 })
+                 
                   this.createRevForm = document.createElement('form')
                   this.createRevForm.className = "create-review"
                   this.createRevForm.innerText = `Hi! ${user.name}! Please give us your feedback:`
