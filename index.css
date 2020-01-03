@@ -1,3 +1,10 @@
+html { 
+    background: url(https://cdn.getyourguide.com/img/location_img-59-1969619245-148.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 h1 {
     font-family: 'Lobster', cursive;
     font-size: 80px;
@@ -27,14 +34,16 @@ h4 {
 }
 
 body {
-    background-color: #d8a7b1;
+    background-color: initial;
 }
 
 .museum-des {
     font-family: 'Montserrat', sans-serif;
-    color: #003a50;
+    color:#fbeed3;
     text-align: justify;
     font-size: 20px;
+    font-weight: bolder;
+    /* background-color: #fbeed3; */
 }
 .museum-description {
     font-style: oblique;
@@ -52,7 +61,7 @@ body {
 
 .no-review {
     font-family: 'Montserrat', sans-serif;
-    color: #003a50;
+    color: #fbeed3;
     text-align: justify;
     font-size: 20px;
 
@@ -66,26 +75,26 @@ img {
 
 .review {
     font-family: 'Montserrat', sans-serif;
-    color: #003a50;
+    color: #fbeed3;
     text-align: justify;
     font-size: 20px;
 }
 
 .museum-hours {
     font-family: 'Montserrat', sans-serif;
-    color: #003a50;
+    color: #fbeed3;
     text-align: justify;
 }
 
 .museum-address {
     font-family: 'Montserrat', sans-serif;
-    color: #003a50;
+    color: #fbeed3;
     text-align: justify;
 }
 
 .museum-homepage {
     font-family: 'Montserrat', sans-serif;
-    color: #003a50;
+    color: #fbeed3;
     text-align: justify;
     font-size: 20px;
     font-weight: bolder;
@@ -98,7 +107,7 @@ img {
 
 .create-user {
     font-family: 'Montserrat', sans-serif;
-    color: #003a50;
+    color: #fbeed3;
     text-align: justify;
     font-size: small;
     margin-top: 50px;
@@ -106,7 +115,7 @@ img {
 
 .create-review {
     font-family: 'Montserrat', sans-serif;
-    color: #003a50;
+    color: #fbeed3;
     text-align: justify;
     font-size: small;
     margin-top: 50px;
@@ -261,7 +270,7 @@ img {
 
 .rev-form {
     font-family: 'Montserrat', sans-serif;
-    color: #003a50;
+    color: #fbeed3;
     text-align: justify;
     font-size: small;
     margin-top: 20px;
