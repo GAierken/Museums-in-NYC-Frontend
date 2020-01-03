@@ -189,6 +189,13 @@ class museumJS {
                      .then(newRev => {
                          this.createRevForm.remove()
                          new ReviewJS(newRev)
+                         if(this.noRevLi){
+                             this.noRevLi.remove()
+                             museumDetail.append(this.createRevForm)
+
+                         }else{museumDetail.append(this.createRevForm)}
+                         
+
                      })
                  })
               })
