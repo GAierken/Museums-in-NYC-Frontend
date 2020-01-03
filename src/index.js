@@ -12,7 +12,7 @@ searchInput.addEventListener("input", (evt) => {
   let thingTyped = evt.target.value
 
 
-  let allMuseums = document.querySelectorAll("li.museum")
+  let allMuseums = document.querySelectorAll("li.list-group-item")
 
   allMuseums.forEach((museumLi) => {
     
