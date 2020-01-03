@@ -123,3 +123,105 @@ img {
 .delete-btn:active {background-color: rgb(188, 120, 180);
     box-shadow: 0 5px #666;
     transform: translateY(4px);}
+
+
+.likes-button {
+    display: inline-block;
+    padding: 1px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #8Ac7c0;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+
+}
+.likes-button:hover {background-color: #4a7684}
+.likes-button:active {background-color: #4a7684;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);}
+
+.dislikes-button {
+    display: inline-block;
+    padding: 1px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(234, 152, 224);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+
+}
+.dislikes-button:hover {background-color: rgb(188, 120, 180)}
+.dislikes-button:active {background-color: rgb(188, 120, 180);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);}
+
+
+.rev-submit {
+    display: inline-block;
+    padding: 1px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(234, 153, 153);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.rev-submit:hover {background-color: rgb(218, 89, 89);}
+.rev-submit:active{background-color: rgb(218, 89, 89);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);}
+
+.create-rev-submit  {
+    display: inline-block;
+    padding: 1px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(234, 153, 153);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.create-rev-submit:hover {background-color: rgb(218, 89, 89);}
+.create-rev-submit:active {background-color: rgb(218, 89, 89);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);}
+
+
+.user-submit  {
+        display: inline-block;
+        padding: 1px 10px;
+        font-size: 10px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: rgb(234, 153, 153);
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+    
+.user-submit:hover {background-color: rgb(218, 89, 89);}
+.user-submit:active {background-color: rgb(218, 89, 89);
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);}
