@@ -187,15 +187,28 @@ class museumJS {
                      evt.preventDefault()
                      let newContent = evt.target.querySelector('textarea').value
                         // alert('Your new review is saved!')
+                       
                      Adaptor.createReview(newContent, user.id, this.id)
                      .then(newRev => {
+                        
                          this.createRevForm.remove()
                          new ReviewJS(newRev)
                          if(this.noRevLi){
                              this.noRevLi.remove()
+                             this.createRevForm.querySelector('textarea').value = " "
+                             console.log(this.createRevForm)
                              museumDetail.append(this.createRevForm)
+                            
 
-                         }else{museumDetail.append(this.createRevForm)}
+                         }else{
+                            console.log(this.createRevForm)
+                            this.createRevForm.querySelector('textarea').value = " "
+
+                             museumDetail.append(this.createRevForm)
+                             
+
+                             
+                            }
                          
 
                      })
