@@ -1,12 +1,12 @@
 h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: xx-large;
+    font-family: 'Lobster', cursive;
+    font-size: 50px;
     color: #003a50;
     text-align: center;
 }
 
 .museum {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Special Elite', cursive;
     color: #003a50
     
 
@@ -28,6 +28,19 @@ body {
     text-align: justify;
     font-size: small;
 }
+.museum-description {
+    font-style: oblique;
+    margin-left: 35px;
+}
+.museum-review {
+    font-style: oblique;
+    margin-left: 35px;
+}
+.museum-plan {
+    font-style: oblique;
+    margin-left: 35px;
+}
+
 
 .no-review {
     font-family: 'Montserrat', sans-serif;
@@ -65,6 +78,7 @@ img {
     color: #003a50;
     text-align: justify;
     font-size: small;
+    font-weight: bolder;
 }
 
 #search-bar {

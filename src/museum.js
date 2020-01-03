@@ -232,10 +232,10 @@ class museumJS {
         this.nameH4.innerText = `${this.name}`
         this.hourTag = document.createElement("li")
         this.hourTag.className = "museum-hours"
-        this.hourTag.innerText = `${this.hours}`
+        this.hourTag.innerText = `Museum Hours: ${this.hours}`
         this.addressTag = document.createElement("li")
         this.addressTag.className = "museum-address"
-        this.addressTag.innerText = `${this.address}`
+        this.addressTag.innerText = `Museum Address: ${this.address}`
         museumDetail.append(this.nameH4)
         museumDetail.append(this.hourTag)
         museumDetail.append(this.addressTag)
