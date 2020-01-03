@@ -18,7 +18,7 @@ class museumJS {
 
         ///structure
         this.nameLiTag = document.createElement("li")
-         this.nameLiTag.className = "museum"
+         this.nameLiTag.className = "list-group-item"
          this.nameLiTag.innerText = this.name
         museumList.append(this.nameLiTag)
 
@@ -70,8 +70,8 @@ class museumJS {
         this.imgTag = document.createElement("img")
         this.imgTag.src = `${this.image_url}`
         this.imgTag.alt = `${this.name}`
-        this.imgTag.width = '300'
-        this.imgTag.height = '300'
+        this.imgTag.width = '460'
+        this.imgTag.height = '400'
         this.detailTag.append(this.imgTag)
         this.desPTag = document.createElement("p")
         this.desPTag.className = 'museum-des'

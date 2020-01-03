@@ -1,14 +1,18 @@
 h1 {
     font-family: 'Lobster', cursive;
-    font-size: 50px;
+    font-size: 80px;
     color: #003a50;
     text-align: center;
     margin-bottom: 30px;
+    background-color: #8ac7c0;
 }
 
-.museum {
+.list-group-item {
     font-family: 'Special Elite', cursive;
-    color: #003a50
+    color: #003a50;
+    background-color:#FFCDAC;
+    font-size: 13px;
+    
     
 
 }
@@ -19,6 +23,7 @@ h4 {
     text-align: justify;
     font-weight: bolder;
     margin-bottom: 40px;
+    font-size: 30px;
 }
 
 body {
@@ -29,7 +34,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
     text-align: justify;
-    font-size: small;
+    font-size: 20px;
 }
 .museum-description {
     font-style: oblique;
@@ -49,6 +54,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
     text-align: justify;
+    font-size: 20px;
 
 }
 
@@ -62,6 +68,7 @@ img {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
     text-align: justify;
+    font-size: 20px;
 }
 
 .museum-hours {
@@ -80,7 +87,7 @@ img {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
     text-align: justify;
-    font-size: small;
+    font-size: 20px;
     font-weight: bolder;
 }
 
