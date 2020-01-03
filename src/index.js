@@ -26,7 +26,7 @@ searchInput.addEventListener("input", (evt) => {
 })
 let welcomeLine = document.createElement('div')
     welcomeLine.id = 'welcome-line'
-    welcomeLine.innerText = "WELCOME TO NEW YORK! LET'S GO TO MUSEUMS!"
+    welcomeLine.innerText = "WELCOME TO NEW YORK! LET'S VISIT MUSEUMS!"
     museumDetail.append(welcomeLine)
 /////// get museums
 Adaptor.allMuseums()
