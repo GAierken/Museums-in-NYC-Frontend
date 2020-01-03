@@ -85,3 +85,41 @@ img {
     text-align: justify;
     font-size: small;
 }
+
+.edit-btn {
+    display: inline-block;
+    padding: 1px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #8Ac7c0;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.edit-btn:hover {background-color: #4a7684}
+.edit-btn:active {background-color: #4a7684;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);}
+
+.delete-btn {display: inline-block;
+    padding: 1px 10px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(234, 152, 224);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+
+}
+.delete-btn:hover {background-color: rgb(188, 120, 180)}
+.delete-btn:active {background-color: rgb(188, 120, 180);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);}
