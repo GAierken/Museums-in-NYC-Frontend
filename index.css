@@ -19,8 +19,18 @@ h1 {
     font-weight: bolder;
     font-family: 'Indie Flower', cursive;
     font-size: 50px;
-    margin-top: 100px;
-}
+    text-align: justify;
+    -webkit-animation: action 1s infinite  alternate;
+        animation: action 1s infinite  alternate;
+    }
+    @-webkit-keyframes action {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-10px); }
+    }
+    @keyframes action {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(-10px); }
+    }
 
 .list-group-item {
     font-family: 'Special Elite', cursive;
@@ -92,12 +102,16 @@ img {
     font-family: 'Montserrat', sans-serif;
     color: #fbeed3;
     text-align: justify;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .museum-address {
     font-family: 'Montserrat', sans-serif;
     color: #fbeed3;
     text-align: justify;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .museum-homepage {
