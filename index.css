@@ -3,6 +3,7 @@ h1 {
     font-size: 50px;
     color: #003a50;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .museum {
@@ -16,6 +17,8 @@ h4 {
     font-family: 'Montserrat', sans-serif;
     color: #003a50;
     text-align: justify;
+    font-weight: bolder;
+    margin-bottom: 40px;
 }
 
 body {
