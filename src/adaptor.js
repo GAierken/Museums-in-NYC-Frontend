@@ -70,10 +70,45 @@ function createUser(name) {
     .then(r => r.json())
    
 }
+
+function createLikes(user_id, museum_id) {
+    
+    return fetch(API + '/likes', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json',
+            'accept': 'application/json'
+        },
+        body: JSON.stringify({
+            likes: '1',
+            user_id: user_id,
+            museum_id: museum_id
+        })
+    }).then(r => r.json()) }
+
+function createDislikes(user_id, museum_id){
+    return fetch(API + '/dislikes', {
+        method: "POST",
+        headers: {
+            'content-type': 'application/json',
+            'accept': 'application/json'
+        },
+        body: JSON.stringify({
+            dislikes: '1',
+            user_id: user_id,
+            museum_id: museum_id
+        })
+    }).then(r => r.json()) }
+
+
+
 const Adaptor = {
     allMuseums: getMuseums,
     deleteReview: deleteReview,
     editReview: editReview,
     createReview: createReview,
-    createUser: createUser
+    createUser: createUser,
+    createLikes: createLikes,
+    createDislikes: createDislikes
+    
 }

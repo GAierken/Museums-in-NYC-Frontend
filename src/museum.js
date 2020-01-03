@@ -141,6 +141,7 @@ class museumJS {
                  this.likesBtn.className = 'likes-button'
                  this.likesBtn.innerText = `👍${this.likes.length}`
                  this.nameH4.append(this.likesBtn)
+
          
                 this.dislikesBtn = document.createElement("button")
                  this.dislikesBtn.className = 'dislikes-button'
@@ -149,10 +150,22 @@ class museumJS {
                 this.likesBtn.addEventListener("click", (evt) => {
                     this.likes.length ++
                     evt.target.innerText = `👍${this.likes.length}`
+                    Adaptor.createLikes(user.id, this.id)
+                    .then(newLike => {
+                        this.likes.push(newLike)
+                        user.likes.push(newLike)
+                    })
                  })
                  this.dislikesBtn.addEventListener("click", (evt) => {
                     this.dislikes.length ++
-                    evt.target.innerText = `👍${this.dislikes.length}`
+                    evt.target.innerText = `👎${this.dislikes.length}`
+                    Adaptor.createDislikes(user.id, this.id)
+                    .then(newDislike => {
+                        console.log(newDislike)
+                        this.dislikes.push(newDislike)
+                        user.dislikes.push(newDislike)
+                    })
+                    
                  })
                  
                   this.createRevForm = document.createElement('form')
