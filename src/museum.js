@@ -124,6 +124,7 @@ class museumJS {
             this.signInForm.append(this.signInInput)
             
             this.userSubmit = document.createElement('input')
+            this.userSubmit.className = 'user-submit'
             this.userSubmit.type = 'submit'
             this.userSubmit.innerText = 'Sign Up'
             this.signInForm.append(this.userSubmit)
@@ -175,6 +176,7 @@ class museumJS {
                   this.createRevText.name = 'review'
                   this.createRevText.innerText = 'Your review here...'
                  this.createRevInput = document.createElement('input')
+                 this.createRevInput.className = 'create-rev-submit'
                   this.createRevInput.type = 'submit'
                   this.createRevForm.append(this.createRevText, this.createRevInput)
                  museumDetail.append(this.createRevForm)
@@ -184,7 +186,7 @@ class museumJS {
                  this.createRevForm.addEventListener('submit', (evt) => {
                      evt.preventDefault()
                      let newContent = evt.target.querySelector('textarea').value
-                        
+                        // alert('Your new review is saved!')
                      Adaptor.createReview(newContent, user.id, this.id)
                      .then(newRev => {
                          this.createRevForm.remove()
