@@ -50,6 +50,7 @@ class museumJS {
     }
     /////end constructor
     handleMouseEnter = () => {
+        
         this.nameLiTag.append(this.descriptionTag)
         this.nameLiTag.append(this.reviewsTag)
         this.nameLiTag.append(this.planVisitTag)
