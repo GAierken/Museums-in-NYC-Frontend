@@ -77,6 +77,7 @@ img {
     color: #003a50;
     text-align: justify;
     font-size: small;
+    margin-top: 50px;
 }
 
 .create-review {
@@ -84,6 +85,7 @@ img {
     color: #003a50;
     text-align: justify;
     font-size: small;
+    margin-top: 50px;
 }
 
 .edit-btn {
@@ -225,3 +227,13 @@ img {
 .user-submit:active {background-color: rgb(218, 89, 89);
         box-shadow: 0 5px #666;
         transform: translateY(4px);}
+
+.rev-form {
+    font-family: 'Montserrat', sans-serif;
+    color: #003a50;
+    text-align: justify;
+    font-size: small;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
