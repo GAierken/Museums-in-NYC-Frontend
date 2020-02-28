@@ -163,7 +163,7 @@ class museumJS {
                     evt.target.innerText = `👎${this.dislikes.length}`
                     Adaptor.createDislikes(user.id, this.id)
                     .then(newDislike => {
-                        console.log(newDislike)
+                        
                         this.dislikes.push(newDislike)
                         user.dislikes.push(newDislike)
                     })
@@ -197,12 +197,12 @@ class museumJS {
                          if(this.noRevLi){
                              this.noRevLi.remove()
                              this.createRevForm.querySelector('textarea').value = " "
-                             console.log(this.createRevForm)
+                             
                              museumDetail.append(this.createRevForm)
                             
 
                          }else{
-                            console.log(this.createRevForm)
+                            
                             this.createRevForm.querySelector('textarea').value = " "
 
                              museumDetail.append(this.createRevForm)
