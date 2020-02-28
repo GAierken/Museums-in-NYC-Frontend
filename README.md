@@ -5,8 +5,8 @@ New York City Museums reviewing app, where user could search for a museum, view 
 
 ## Prerequisites 
 Before you continue, ensure you have met the following requirements:
-* You have installed the latest version of Ruby.
-* You have a basic understanding of Ruby on Rails and SQL
+* You have installed the latest version of JavaScript.
+* You have a basic understanding of JavaScript and EventListener.
 * You have installed Museums in NYC backend: https://github.com/GAierken/Museums-in-NYC-Frontend
 
 ## Installation 
@@ -16,7 +16,7 @@ npm install && npm start
 ```
 
 ## Tech Used
-Javascript, HTML, CSS
+JavaScript, HTML, CSS
 
 ## Project Demo
 [Demo Video](https://www.youtube.com/watch?v=1PeeuhozAIo&feature=youtu.be)
